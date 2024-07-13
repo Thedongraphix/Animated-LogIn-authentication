@@ -4,7 +4,7 @@ const registerlink=document.querySelector('.register-link')
 registerlink.addEventListener('click',()=>{
     loginsec.classList.add('active')
 })
-loginlink.addEventListener('click',()=>{
+loginlink.addEventListener('click',()=>{5
     loginsec.classList.remove('active')
 })
 
