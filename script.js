@@ -10,7 +10,7 @@ loginlink.addEventListener('click',()=>{
 
 document.addEventListener('DOMContentLoaded', () => {
     const textElement = document.querySelector('.typing');
-    const textArray = ["developing and designing visually appealing software.", "creating user-friendly interfaces.", "bringing innovative ideas to life."];
+    const textArray = [ "creating user-friendly interfaces.","Lets connect and grow together!"];
     const typingSpeed = 100;
     const erasingSpeed = 50;
     const newTextDelay = 2000; // Delay between current and next text
