@@ -1,19 +1,22 @@
-const loginsec=document.querySelector('.login-section')
-const loginlink=document.querySelector('.login-link')
-const registerlink=document.querySelector('.register-link')
-registerlink.addEventListener('click',()=>{
-    loginsec.classList.add('active')
-})
-loginlink.addEventListener('click',()=>{5
-    loginsec.classList.remove('active')
-})
-
 document.addEventListener('DOMContentLoaded', () => {
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const nav = document.querySelector('.nav');
+
+    menuIcon.addEventListener('click', () => {
+        nav.classList.add('active');
+    });
+
+    closeIcon.addEventListener('click', () => {
+        nav.classList.remove('active');
+    });
+
+    // Existing typing effect code
     const textElement = document.querySelector('.typing');
-    const textArray = [ "creating user-friendly interfaces.","Lets connect and grow together!"];
+    const textArray = ["creating user-friendly interfaces.", "Let's connect and grow together!"];
     const typingSpeed = 100;
     const erasingSpeed = 50;
-    const newTextDelay = 2000; // Delay between current and next text
+    const newTextDelay = 2000;
     let textArrayIndex = 0;
     let charIndex = 0;
 
@@ -39,6 +42,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Initial call
     type();
 });

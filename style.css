@@ -8,7 +8,7 @@
     font-weight: 400;
 }
 
-body {
+body {                       
     height: 100vh;
     width: 100%;
     background: #000;
@@ -36,15 +36,48 @@ body {
     z-index: 100;
 }
 
-.navbar a {
+.nav a {
     position: relative;
     font-size: 15px;
     color: #fff;
     margin-right: 30px;
     text-decoration: none;
-}
 
-.navbar a::after {
+}
+#menu-icon {
+    font-size: 24px; /* Adjust the size */
+    color: #fff; /* Change the color */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-right: 10px; /* Add some margin */
+    display: none;
+  }
+  
+#close-icon {
+    font-size: 24px; /* Adjust the size */
+    color: #ffFFFF; /* Change the color */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-left: 10px; /* Add some margin */
+    display: none;
+
+  }
+  
+.nav .menu-icon {
+    display:block;
+    font-size: 13px;
+    color: #fff;
+    height:100vh;
+    position: absolute;
+    top: 20px; /* Adjust the top position as needed */
+    right: 20px; /* Adjust the right position as needed */
+    cursor: pointer; /* To indicate it's clickable */
+    
+}
+.nav.menu-icon i{
+    display: block;
+    font-size: 13px;
+    color: #fff;
+}
+.nav a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -58,7 +91,7 @@ body {
     transition: .5s ease;
 }
 
-.navbar a:hover:after {
+.nav a:hover:after {
     transform: translateY(0);
     opacity: 1;
 }
@@ -98,7 +131,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0; /* Remove additional padding */
+    padding: 0;
 }
 
 .search-bar input::placeholder {
@@ -430,104 +463,63 @@ body {
 }
 
 .typing {
-    border-right: 2px solid #fff; /* The cursor */
+    border-right: 2px solid #fff; 
     white-space: nowrap;
-    overflow: hidden; /* Ensures text doesn't overflow */
+    overflow: hidden; 
     animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
 }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: white; }
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 1280px) {
-    .header {
-        padding: 25px 5%;
-    }
-    
-    .search-bar {
-        right: 5%;
-    }
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
+    .nav a {
+        display: none;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    #close-icon {
+        display: none;
+    }
+
+    .nav.active #menu-icon {
+        display: none;
+    }
+
+    .nav.active #close-icon {
+        display: block;
+    }
+
+    .nav.active a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        background: #000;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+    }
+
+    .search-bar {
+        width: 80%;
+        margin: 20px auto;
+    }
+
     .container {
         width: 90%;
         height: auto;
     }
-    
+
     .item, .login-section {
         width: 100%;
-        padding: 20px;
-    }
-    
-    .item {
-        position: static;
-        transform: none;
-        padding: 40px;
     }
 
     .login-section .form-box {
         width: 100%;
     }
 
-    .login-section .form-box.login, 
-    .login-section .form-box.register {
-        transform: none;
-    }
-
-    .search-bar {
-        width: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar a {
-        font-size: 14px;
-        margin-right: 15px;
-    }
-    
-    .search-bar {
-        width: 150px;
-        top: 15px;
-    }
-    
-    .text-item h2 {
-        font-size: 20px;
-    }
-    
-    .text-item p {
-        font-size: 14px;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        width:100%;
-        height: 100vh;
-    }
-
-    .footer-col {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-        width: 100%;
-     
-    }
-    
-    .subscribe-form {
-        flex-direction: column;
-    }
-    
-    .subscribe-form input, .subscribe-form button {
-        width: 100%;
-        margin: 5px 0;
+    .form-box .input-box {
+        width: 90%;
     }
 }
